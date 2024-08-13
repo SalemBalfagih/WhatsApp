@@ -1,26 +1,36 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp/constants.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+class CustomTextFromField extends StatelessWidget {
+  const CustomTextFromField({
     super.key,
     required this.hintText,
+    required this.onChanged,
   });
   final String hintText;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "The filed is required";
+          }
+        },
+        onChanged: onChanged,
         decoration: InputDecoration(
           hintText: hintText,
-          border: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 1),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: kPrimarykey, width: 1),
           ),
-          focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 2),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: kPrimarykey, width: 2),
           ),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.green, width: 1),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: kPrimarykey, width: 1),
           ),
         ),
       ),
