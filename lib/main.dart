@@ -28,7 +28,7 @@ class WhatsApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: ChatView.id,
+      initialRoute: LoginView.id,
       routes: {
         LoginView.id: (context) => LoginView(),
         RegisterView.id: (context) => RegisterView(),

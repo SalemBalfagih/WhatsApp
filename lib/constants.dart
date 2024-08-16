@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 const kPrimarykey = Colors.green;
 const kLinearGradient = LinearGradient(colors: [
@@ -8,3 +9,7 @@ const kLinearGradient = LinearGradient(colors: [
 ], begin: Alignment.center, end: Alignment.bottomCenter);
 
 const klogo = "assets/images/whatsapp_480px.png";
+
+const kMessagesCollections = "messages";
+
+const kMessage = "message";

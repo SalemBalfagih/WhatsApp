@@ -13,27 +13,25 @@ class CustomTextFromField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: TextFormField(
-        validator: (value) {
-          if (value!.isEmpty) {
-            return "The filed is required";
-          }
-        },
-        onChanged: onChanged,
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: OutlineInputBorder(
-            borderSide: BorderSide(color: kPrimarykey, width: 1),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: kPrimarykey, width: 2),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: kPrimarykey, width: 1),
-          ),
-        ),
-      ),
-    );
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: TextFormField(
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "The filed is required";
+              }
+            },
+            onChanged: onChanged,
+            decoration: InputDecoration(
+              hintText: hintText,
+              border: OutlineInputBorder(
+                borderSide: BorderSide(color: kPrimarykey, width: 1),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: kPrimarykey, width: 2),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: kPrimarykey, width: 1),
+              ),
+            )));
   }
 }

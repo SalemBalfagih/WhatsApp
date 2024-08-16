@@ -90,7 +90,8 @@ class _LoginViewState extends State<LoginView> {
                               await singInUser();
                               showSnackBar(context, "Registered Successfully",
                                   Colors.green);
-                              Navigator.of(context).pushNamed(ChatView.id);
+                              Navigator.pushNamed(context, ChatView.id,
+                                  arguments: emailAddress);
                             } on FirebaseAuthException catch (e) {
                               if (e.code == 'user-not-found') {
                                 showSnackBar(
@@ -116,7 +117,10 @@ class _LoginViewState extends State<LoginView> {
                     const Text("Don't have an account?"),
                     TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, RegisterView.id);
+                          Navigator.pushNamed(
+                            context,
+                            RegisterView.id,
+                          );
                         },
                         child: const Text(
                           "Register",
